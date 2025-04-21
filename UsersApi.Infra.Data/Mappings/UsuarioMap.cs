@@ -6,6 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UsersApi.Domain.Entities;
+using UsersApi.Domain.Enums;
+using UsersApi.Infra.Data.Helpers;
+using UsersApi.Infra.Data.Repositories;
 
 namespace UsersApi.Infra.Data.Mappings
 {
@@ -16,8 +19,8 @@ namespace UsersApi.Infra.Data.Mappings
             //nome da tabela do banco de dados
             builder.ToTable("TB_USUARIOS");
 
-           //mapeamento da chave primária
-           builder.HasKey(x => x.Id);
+            //mapeamento da chave primária
+            builder.HasKey(x => x.Id);
 
             //mapeamento dos demais campos
             builder.Property(x => x.Id)

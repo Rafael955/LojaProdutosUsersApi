@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\UserApi.Domain\UsersApi.Domain.csproj" />
     <ProjectReference Include="..\UsersApi.Infra.Data\UsersApi.Infra.Data.csproj" />
+    <ProjectReference Include="..\UsersAPI.Infra.Message\UsersAPI.Infra.Message.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
 using UserApi.Application.Configurations;
 using UsersApi.Domain.Interfaces.Repositories;
 using UsersApi.Infra.Data.Repositories;
+using UsersAPI.Infra.Message.Consumers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+// Registrando a classe WORKER / CONSUMER
+builder.Services.AddHostedService<MessageConsumer>();
 
 builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddTransient<IPerfilRepository, PerfilRepository>();   
@@ -30,3 +34,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+public partial class Program {}
