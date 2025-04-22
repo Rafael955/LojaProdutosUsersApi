@@ -33,7 +33,7 @@ namespace UserApi.Application.Controllers
             {
                 if (_usuarioRepository.HasEmail(request.Email))
                 {
-                    return StatusCode(StatusCodes.Status400BadRequest, new
+                    return StatusCode(StatusCodes.Status409Conflict, new
                     {
                         message = "Já existe um usuário cadastrado com esse email. Informe outro."
                     });
