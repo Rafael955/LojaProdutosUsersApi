@@ -24,7 +24,7 @@ namespace UsersAPI.Infra.Message.Helpers
             var body = @$"
                 <div style='font-family: Verdana, sans-serif; background-color: #f4f4f4; padding: 20px; text-align: center;'>
                     <div style='max-width: 600px; background-color: #ffffff; padding: 20px; border-radius: 8px; margin: auto; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);'>
-                        <img src='UsersAPI.Infra.Message/Assets/Images/logo.png' 
+                        <img src='https://i.ibb.co/Q5NjJSS/logo.png'
                                 alt='LojaProdutosApp' 
                                 style='max-width: 200px; margin-bottom: 20px;' />
                         <h2 style='color: #333;'>Olá {usuario.Nome},</h2>

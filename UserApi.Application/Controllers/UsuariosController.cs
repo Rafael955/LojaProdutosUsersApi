@@ -7,6 +7,8 @@ using UsersApi.Domain.Entities;
 using UsersApi.Domain.Enums;
 using UsersApi.Domain.Interfaces.Repositories;
 using UsersApi.Infra.Data.Helpers;
+using UsersAPI.Infra.Message.Models;
+using UsersAPI.Infra.Message.Producers;
 
 namespace UserApi.Application.Controllers
 {
@@ -48,6 +50,16 @@ namespace UserApi.Application.Controllers
                 };
 
                 _usuarioRepository.Execute(usuario, TipoOperacao.Inserir);
+
+                var messageProducer = new MessageProducer();
+                messageProducer.SendMessage(new UsuarioRegistrado
+                {
+                    Id = usuario.Id,
+                    Nome = usuario.Nome,
+                    Email = usuario.Email,
+                    CriadoEm = DateTime.Now,
+                    Perfil = "OPERADOR"
+                });
 
                 return StatusCode(StatusCodes.Status201Created, new CriarUsuarioResponseDto
                 {
