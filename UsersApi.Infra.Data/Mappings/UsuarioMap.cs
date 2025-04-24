@@ -56,6 +56,17 @@ namespace UsersApi.Infra.Data.Mappings
             builder.HasOne(x => x.Perfil)
                 .WithMany(x => x.Usuarios)
                 .HasForeignKey(x => x.PerfilId);
+
+            builder.HasData(
+                new Usuario{
+                    Id = Guid.Parse("C3610A1A-1FB1-44A6-A7A4-311D05C3C61D"), 
+                    Nome = "Admin",
+                    Email = "admin@lojaprodutosapp.com",
+                    Senha = "Admin@123",
+                    Status = Status.Ativo,
+                    PerfilId = Guid.Parse("7108F98B-F360-40FC-8A87-4C4D2BF578F5")
+                }
+            );
         }
     }
 }
