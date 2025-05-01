@@ -12,7 +12,7 @@ namespace UsersApi.Infra.Data.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=UsersDB2;Integrated Security=True;");
+            optionsBuilder.UseSqlServer("Data Source=\"localhost, 1435\";Initial Catalog=master;User ID=sa;Password=LojaProdutoApp@2025;Encrypt=False");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

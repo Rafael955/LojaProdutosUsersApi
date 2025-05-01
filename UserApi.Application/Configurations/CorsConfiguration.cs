@@ -12,9 +12,9 @@ namespace UserApi.Application.Configurations
         //Configuração do CORS (permissão para o Angular acessar os endpoints da API)
         service.AddCors(options =>
         {
-            options.AddPolicy(name: "AllowAngularApp", policy =>
+            options.AddPolicy(name: "AllowFrontEndApps", policy =>
             {
-                policy.WithOrigins("http://localhost:4200") // URL da aplicação Angular
+                policy.WithOrigins("http://localhost:4200", "http://localhost:5051") // URL da aplicação Angular e aplicação Blazor
                     .AllowAnyHeader()
                     .AllowAnyMethod();
             });
@@ -23,7 +23,7 @@ namespace UserApi.Application.Configurations
 
     public static void UseCorsConfiguration(this IApplicationBuilder app)
     {
-        app.UseCors("AllowAngularApp");
+        app.UseCors("AllowFrontEndApps");
     }
     }
 }
