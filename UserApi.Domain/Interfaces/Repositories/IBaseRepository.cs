@@ -10,7 +10,9 @@ namespace UsersApi.Domain.Interfaces.Repositories
     public interface IBaseRepository<T> where T : class
     {
         void Execute(T entity, TipoOperacao operation);
+
         T GetById(Guid id);
+
         List<T> GetAll();
     }
 }

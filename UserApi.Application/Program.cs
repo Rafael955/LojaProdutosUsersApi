@@ -14,9 +14,7 @@ builder.Services.AddOpenApi();
 // Registrando a classe WORKER / CONSUMER
 builder.Services.AddHostedService<MessageConsumer>();
 
-builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
-builder.Services.AddTransient<IPerfilRepository, PerfilRepository>();   
-
+builder.Services.AddDependencyInjection();
 builder.Services.AddCorsConfiguration();
 
 var app = builder.Build();

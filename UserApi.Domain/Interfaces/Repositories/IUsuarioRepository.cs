@@ -10,6 +10,7 @@ namespace UsersApi.Domain.Interfaces.Repositories
     public interface IUsuarioRepository : IBaseRepository<Usuario>
     {
         Usuario? GetByEmailAndPassword(string email, string password);
+
         bool HasEmail(string email);
     }
 }

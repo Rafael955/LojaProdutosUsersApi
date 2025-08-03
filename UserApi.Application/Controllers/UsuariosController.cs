@@ -88,6 +88,7 @@ namespace UserApi.Application.Controllers
                 var usuario = _usuarioRepository.GetByEmailAndPassword(request.Email, SHA256Encrypt.Encrypt(request.Senha));
 
                 if (usuario == null)
+
                 {
                     return StatusCode(StatusCodes.Status401Unauthorized, new
                     {
